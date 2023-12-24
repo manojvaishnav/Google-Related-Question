@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #redirectLink {
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a id="redirectLink" href="https://mkvaishnav.netlify.app/" onclick="redirect(event)">Click me to redirect</a>
+
+    <script>
+        let clickCount = 0;
+        function redirect(event) {
+            event.preventDefault()
+            clickCount++;
+
+            var linkElement = document.getElementById('redirectLink');
+            var hrefValue = linkElement.getAttribute('href');
+
+            const redirectUrls = [
+                'https://www.youtube.com/',
+                'https://www.google.com/',
+                'https://www.instagram.com/',
+                hrefValue
+            ];
+
+            if (clickCount <= 3) {
+                window.open(redirectUrls[clickCount - 1], '_blank');
+            } else {
+                window.location.href = redirectUrls[3];
+            }
+        }
+    </script>
+
+</body>
+
+</html>
