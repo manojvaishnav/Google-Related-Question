@@ -1,181 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
+Google Questions Backend App
+============================
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Questions Backend App</title>
-</head>
+Welcome to the Google Questions Backend App! This Node.js app allows you to retrieve and manage the most asked questions on Google about a specific tag.
 
-<body>
+Getting Started
+---------------
 
-    <h1>Google Questions Backend App</h1>
+### Step 1: Clone the Repository
 
-    <p>Welcome to the Google Questions Backend App! This Node.js app allows you to retrieve and manage the most asked
-        questions on Google about a specific tag.</p>
+        `git clone https://github.com/manojvaishnav/Google-Related-Question             cd your-repo`
+        
+    
 
-    <h2>Getting Started</h2>
+### Step 2: Install Dependencies
 
-    <h3>Step 1: Clone the Repository</h3>
+        `npm install`
+        
+    
 
-    <pre>
-        <code>
-            git clone https://github.com/your-username/your-repo.git
-            cd your-repo
-        </code>
-    </pre>
+### Step 3: Create a .env File
 
-    <h3>Step 2: Install Dependencies</h3>
+Create a `.env` file in the root directory and add the following variables:
 
-    <pre>
-        <code>
-            npm install
-        </code>
-    </pre>
+        `PORT=your_port_number             DB_HOST=your_database_host             DB_USER=your_database_user             DB_PASSWORD=your_database_password             DB_DATABASE=your_database_name             DB_PORT=your_database_port             API_KEY=your_serpapi_key`
+        
+    
 
-    <h3>Step 3: Create a .env File</h3>
+### Step 4: Run the Application
 
-    <p>Create a <code>.env</code> file in the root directory and add the following variables:</p>
+        `npm start`
+        
+    
 
-    <pre>
-        <code>
-            PORT=your_port_number
-            DB_HOST=your_database_host
-            DB_USER=your_database_user
-            DB_PASSWORD=your_database_password
-            DB_DATABASE=your_database_name
-            DB_PORT=your_database_port
-            API_KEY=your_serpapi_key
-        </code>
-    </pre>
+The app will start running on the specified port.
 
-    <h3>Step 4: Run the Application</h3>
+API Endpoints
+-------------
 
-    <pre>
-        <code>
-            npm start
-        </code>
-    </pre>
+### 1\. POST /api/v1/question
 
-    <p>The app will start running on the specified port.</p>
+*   **Description:** Save most asked questions about a tag on Google into the MySQL database.
+*   **Request:**
+    
+                    `{                         "query": "sachin tendulkar"                     }`
+                    
+                
+    
+*   **Response:**
+    
+                    `{                         "message": "Search completed successfully."                     }`
+                    
+                
+    
 
-    <h2>API Endpoints</h2>
+### 2\. GET /api/v1/question
 
-    <h3>1. POST /api/v1/question</h3>
+*   **Description:** Retrieve all questions available in the database.
+*   **Response:**
+    
+                    `[                         {                             "id": 1,                             "question": "Sample question 1",                             "answer": "Sample answer 1",                             "search_query": "sachin tendulkar"                         },                         {                             "id": 3,                             "question": "Sample question 3",                             "answer": "Sample answer 3",                             "search_query": "sundar pichai"                         }                     ]`
+                    
+                
+    
 
-    <ul>
-        <li><strong>Description:</strong> Save most asked questions about a tag on Google into the MySQL database.</li>
-        <li><strong>Request:</strong>
-            <pre>
-                <code>
-                    {
-                        "query": "sachin tendulkar"
-                    }
-                </code>
-            </pre>
-        </li>
-        <li><strong>Response:</strong>
-            <pre>
-                <code>
-                    {
-                        "message": "Search completed successfully."
-                    }
-                </code>
-            </pre>
-        </li>
-    </ul>
+### 3\. DELETE /api/v1/question
 
-    <h3>2. GET /api/v1/question</h3>
+*   **Description:** Delete all data for a given tag from the database.
+*   **Request:**
+    
+                    `{                         "query": "sachin tendulkar"                     }`
+                    
+                
+    
+*   **Response:**
+    
+                    `{                         "message": "Data deleted successfully!"                     }`
+                    
+                
+    
 
-    <ul>
-        <li><strong>Description:</strong> Retrieve all questions available in the database.</li>
-        <li><strong>Response:</strong>
-            <pre>
-                <code>
-                    [
-                        {
-                            "id": 1,
-                            "question": "Sample question 1",
-                            "answer": "Sample answer 1",
-                            "search_query": "sachin tendulkar"
-                        },
-                        {
-                            "id": 3,
-                            "question": "Sample question 3",
-                            "answer": "Sample answer 3",
-                            "search_query": "sundar pichai"
-                        }
-                    ]
-                </code>
-            </pre>
-        </li>
-    </ul>
+### 4\. GET /api/v1/tagquestion
 
-    <h3>3. DELETE /api/v1/question</h3>
+*   **Description:** Retrieve all available questions about a specific tag.
+*   **Request:**
+    
+                    `{                         "query": "sachin tendulkar"                     }`
+                    
+                
+    
+*   **Response:**
+    
+                    `[                         {                             "id": 1,                             "question": "Sample question 1",                             "answer": "Sample answer 1",                             "search_query": "sachin tendulkar"                         },                         {                             "id": 3,                             "question": "Sample question 3",                             "answer": "Sample answer 3",                             "search_query": "sachin tendulkar"                         }                     ]`
+                    
+                
+    
 
-    <ul>
-        <li><strong>Description:</strong> Delete all data for a given tag from the database.</li>
-        <li><strong>Request:</strong>
-            <pre>
-                <code>
-                    {
-                        "query": "sachin tendulkar"
-                    }
-                </code>
-            </pre>
-        </li>
-        <li><strong>Response:</strong>
-            <pre>
-                <code>
-                    {
-                        "message": "Data deleted successfully!"
-                    }
-                </code>
-            </pre>
-        </li>
-    </ul>
+Contributing
+------------
 
-    <h3>4. GET /api/v1/tagquestion</h3>
-
-    <ul>
-        <li><strong>Description:</strong> Retrieve all available questions about a specific tag.</li>
-        <li><strong>Request:</strong>
-            <pre>
-                <code>
-                    {
-                        "query": "sachin tendulkar"
-                    }
-                </code>
-            </pre>
-        </li>
-        <li><strong>Response:</strong>
-            <pre>
-                <code>
-                    [
-                        {
-                            "id": 1,
-                            "question": "Sample question 1",
-                            "answer": "Sample answer 1",
-                            "search_query": "sachin tendulkar"
-                        },
-                        {
-                            "id": 3,
-                            "question": "Sample question 3",
-                            "answer": "Sample answer 3",
-                            "search_query": "sachin tendulkar"
-                        }
-                    ]
-                </code>
-            </pre>
-        </li>
-    </ul>
-
-    <h2>Contributing</h2>
-
-    <p>Feel free to contribute to the project by opening issues or submitting pull requests.</p>
-
-
-</body>
-
-</html>
+Feel free to contribute to the project by opening issues or submitting pull requests.
