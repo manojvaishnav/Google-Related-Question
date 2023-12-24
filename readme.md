@@ -11,7 +11,7 @@ Getting Started
         `git clone https://github.com/manojvaishnav/Google-Related-Question
 
 
-        cd your-repo`
+        cd Google-Related-Question`
         
     
 
@@ -61,9 +61,7 @@ API Endpoints
     
                     `{                         
                         
-
                         "query": "sachin tendulkar" 
-
                         
                     }`
                     
@@ -73,9 +71,7 @@ API Endpoints
     
                     `{                         
                         
-
                         "message": "Search completed successfully."                     
-                        
                         
                     }`
                     
@@ -123,13 +119,21 @@ API Endpoints
 *   **Description:** Delete all data for a given tag from the database.
 *   **Request:**
     
-                    `{                         "query": "sachin tendulkar"                     }`
+                    `{                         
+                        
+                        "query": "sachin tendulkar"                     
+                        
+                    }`
                     
                 
     
 *   **Response:**
     
-                    `{                         "message": "Data deleted successfully!"                     }`
+                    `{                         
+                        
+                        "message": "Data deleted successfully!"                     
+                        
+                    }`
                     
                 
     
@@ -139,13 +143,43 @@ API Endpoints
 *   **Description:** Retrieve all available questions about a specific tag.
 *   **Request:**
     
-                    `{                         "query": "sachin tendulkar"                     }`
+                    `{                         
+                        
+                        "query": "sachin tendulkar"                     
+                        
+                    }`
                     
                 
     
 *   **Response:**
     
-                    `[                         {                             "id": 1,                             "question": "Sample question 1",                             "answer": "Sample answer 1",                             "search_query": "sachin tendulkar"                         },                         {                             "id": 3,                             "question": "Sample question 3",                             "answer": "Sample answer 3",                             "search_query": "sachin tendulkar"                         }                     ]`
+                   `[                         
+                        
+                        {                             
+                            
+                            "id": 1,                             
+                            
+                            "question": "Sample question 1",                             
+                            
+                            "answer": "Sample answer 1",                             
+                            
+                            "search_query": "sachin tendulkar"                         
+                            
+                        },                         
+                            
+                        {                             
+                                
+                            "id": 3,                             
+                                
+                            "question": "Sample question 3",                             
+                                
+                            "answer": "Sample answer 3",                             
+                                
+                            "search_query": "sachin tendulkar"                         
+                                
+                        }                     
+                                
+                    ]'
                     
                 
     
