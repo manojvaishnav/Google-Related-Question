@@ -8,7 +8,10 @@ Getting Started
 
 ### Step 1: Clone the Repository
 
-        `git clone https://github.com/manojvaishnav/Google-Related-Question             cd your-repo`
+        `git clone https://github.com/manojvaishnav/Google-Related-Question
+
+
+        cd your-repo`
         
     
 
@@ -22,7 +25,21 @@ Getting Started
 
 Create a `.env` file in the root directory and add the following variables:
 
-        `PORT=your_port_number             DB_HOST=your_database_host             DB_USER=your_database_user             DB_PASSWORD=your_database_password             DB_DATABASE=your_database_name             DB_PORT=your_database_port             API_KEY=your_serpapi_key`
+        `PORT=your_port_number       
+        
+          DB_HOST=your_database_host 
+              
+          DB_USER=your_database_user   
+                          
+        DB_PASSWORD=your_database_password     
+                                    
+        DB_DATABASE=your_database_name    
+                                            
+         DB_PORT=your_database_port   
+                                                     
+           API_KEY=your_serpapi_key`
+
+
         
     
 
@@ -42,13 +59,25 @@ API Endpoints
 *   **Description:** Save most asked questions about a tag on Google into the MySQL database.
 *   **Request:**
     
-                    `{                         "query": "sachin tendulkar"                     }`
+                    `{                         
+                        
+
+                        "query": "sachin tendulkar" 
+
+                        
+                    }`
                     
                 
     
 *   **Response:**
     
-                    `{                         "message": "Search completed successfully."                     }`
+                    `{                         
+                        
+
+                        "message": "Search completed successfully."                     
+                        
+                        
+                    }`
                     
                 
     
@@ -58,7 +87,33 @@ API Endpoints
 *   **Description:** Retrieve all questions available in the database.
 *   **Response:**
     
-                    `[                         {                             "id": 1,                             "question": "Sample question 1",                             "answer": "Sample answer 1",                             "search_query": "sachin tendulkar"                         },                         {                             "id": 3,                             "question": "Sample question 3",                             "answer": "Sample answer 3",                             "search_query": "sundar pichai"                         }                     ]`
+                    `[                         
+                        
+                        {                             
+                            
+                            "id": 1,                             
+                            
+                            "question": "Sample question 1",                             
+                            
+                            "answer": "Sample answer 1",                             
+                            
+                            "search_query": "sachin tendulkar"                         
+                            
+                        },                         
+                            
+                        {                             
+                                
+                            "id": 3,                             
+                                
+                            "question": "Sample question 3",                             
+                                
+                            "answer": "Sample answer 3",                             
+                                
+                            "search_query": "sundar pichai"                         
+                                
+                        }                     
+                                
+                    ]`
                     
                 
     
